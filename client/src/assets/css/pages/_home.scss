@@ -1,0 +1,39 @@
+
+#home_page {
+  lost-utility: clearfix;
+  h1 {
+    color: var(--white);
+    text-align: left;
+  }
+  p {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.5;
+    margin-bottom: 10vh;
+  }
+  a {
+    color: var(--white);
+    font-weight: 700;
+    &:hover {
+      span {
+        transform: translate3d(1vw, 0, 0);
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .intro_p {
+      lost-column: 1;
+      max-width: 50vw;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    max-width: 58vw;
+  }
+  @media screen and (min-width: 1000px) {
+    .intro_p {
+      max-width: 35vw;
+    }
+  }
+
+}
