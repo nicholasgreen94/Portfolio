@@ -9,9 +9,9 @@ class MobileNavigation extends React.Component {
     }
     return (
       <div id="mobile_nav" className={visibility}>
-        <ul location='pathname'>
+        <ul>
           <li><Link to='/'><div className="number">01</div> Home</Link></li>
-          <li><Link to='/work'><div className="number">02</div> Work</Link></li>
+          <li><Link to='/projects'><div className="number">02</div> Projects</Link></li>
           <li><Link to='/contact'><div className="number">03</div> Contact</Link></li>
         </ul>
       </div>

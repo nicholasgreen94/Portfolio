@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.load()
 }
 
-const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
+const url = process.env.MONGODB_URI || "mongodb://localhost:27017/ngreendesigns"
 
 //> Set our port to either a predetermined port number if you have set it up, or 3001
 const PORT = process.env.PORT || 3001
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/work', (req, res) => {
+router.get('/projects', (req, res) => {
   MongoClient.connect(url, (err, client) => {
     if (err) return error
     const db = client.db('portfolio')
@@ -54,6 +54,25 @@ router.get('/work', (req, res) => {
       }) //> render
   })
 })
+
+router.get('/:id', (req, res) => {
+  MongoClient.connect(url, (err, client) => {
+    if (err) return error
+    const db = client.db('portfolio')
+    const projection = { "_id": 0 }
+    //> cursor for database
+    var cursor = db.collection('project_information').find({ uri_name: req.params.id }, projection).sort({ '_id': -1 })
+    //> Array for project information
+    var projectArray = []
+    cursor.forEach((doc, err) => {
+      projectArray.push(doc)
+    }, () => {
+      client.close()
+      return res.json({ success: true, data: projectArray })
+      }) //> render
+  })
+})
+
 
 //> Use our router configuration when we call /api
 app.use('/api', router)

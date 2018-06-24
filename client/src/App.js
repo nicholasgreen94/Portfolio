@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
+import ProjectDetail from './components/Pages/ProjectDetail'
 import Contact from './components/Pages/Contact'
 
 class App extends React.Component {
@@ -25,7 +26,7 @@ class App extends React.Component {
       })
     }
   }
-  
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.pathname === '/') {
       this.setState({
@@ -39,7 +40,6 @@ class App extends React.Component {
   }
 
   render() {
-    const { location } = this.props
     return (
       <div>
         <Helmet>
@@ -58,7 +58,8 @@ class App extends React.Component {
           <div id='site_content'>
             <Header />
             <Route exact path="/" component={Index}/>
-            <Route path="/work" component={Work} />
+            <Route path="/projects" component={Work} />
+            <Route path="/:id" component={ProjectDetail} />
             <Route path="/contact" component={Contact} />
           </div>
         </div>

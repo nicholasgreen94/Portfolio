@@ -1,11 +1,13 @@
 import React from 'react'
-import API from './../../utils/API'
-// import Project from './Project'
-import Masonry from 'react-masonry-component';
+import Masonry from 'react-masonry-css'
+import Project from './Project'
 
-const masonryOptions = {
-    transitionDuration: 2
+const breakpointColumnsObj = {
+  default: 3,
+  800: 2,
+  600: 1
 };
+
 
 class Work extends React.Component{
   constructor() {
@@ -21,20 +23,34 @@ class Work extends React.Component{
   }
 
   loadData = () => {
-    fetch('/api/work/')
+    fetch('/api/projects/')
     .then(data => data.json())
     .then((res) => {
-      console.log(res.data)
       if (!res.success) this.setState({ error: res.error });
       else this.setState({ data: res.data });
     });
   }
 
   render() {
+    const ProjectList = this.state.data.map(function(project){
+           return (
+                <div className='project' key={project._id} data-title={project.name}>
+                  {<Project project={project} />}
+                </div>
+            );
+        });
+
     return (
         <div className="inner_page">
-          <h1>Work</h1>
-
+          <h1>Ahh yeah, projects</h1>
+          <div id='projects_wrapper'>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="masonry_grid"
+              columnClassName="masonry_column">
+              {ProjectList}
+            </Masonry>
+          </div>
         </div>
       )
     }

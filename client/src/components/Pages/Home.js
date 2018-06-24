@@ -8,7 +8,7 @@ const Index = () => (
       <h1>I am a UI / UX Designer and Web Developer</h1>
       <div className="intro_p">
         <p>Unicorn etsy messenger bag swag. Brooklyn yr locavore PBR&B kickstarter direct trade mumblecore ramps messenger bag ennui. Trust fund affogato viral, forage celiac you probably haven't heard of them ennui bitters everyday carry crucifix truffaut prism godard hella disrupt. Bitters aesthetic cornhole you probably haven't heard of them lomo succulents franzen disrupt air plant man bun wolf shoreditch biodiesel edison bulb mlkshk.</p>
-        <Link to="/work">View Portfolio <LinkArrow></LinkArrow></Link>
+        <Link to="/Projects">View Projects <LinkArrow></LinkArrow></Link>
       </div>
     </div>
 )
