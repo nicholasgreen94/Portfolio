@@ -1,8 +1,16 @@
-const express = require('express')
-const path = require('path')
+const express = require("express")
+// const routes = require('./routes/')
+const logger = require('morgan')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
+const path = require('path')
+const Project = require('./models/Project')
+const MongoClient = require('mongodb').MongoClient
+
+// Create instances
 const app = express()
+const router = express.Router()
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
@@ -12,18 +20,49 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.load()
 }
 
+const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
+
+//> Set our port to either a predetermined port number if you have set it up, or 3001
 const PORT = process.env.PORT || 3001
 
-app.use(bodyParser.urlencoded({
-  extended: true,
-}))
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false, }))
+app.use(bodyParser.json());
+app.use(logger('dev'));
 
-app.use(require('./routes/apiRoutes.js'))
+// routes(router)
+//> Set route path
+router.get('/', (req, res) => {
+  res.json({ message: 'Hello World' })
+})
+
+
+router.get('/work', (req, res) => {
+  MongoClient.connect(url, (err, client) => {
+    if (err) return error
+    const db = client.db('portfolio')
+    const projection = { "_id": 0 }
+    //> cursor for database
+    var cursor = db.collection('project_information').find({}, projection).sort({ '_id': -1 })
+    //> Array for project information
+    var projectArray = []
+    cursor.forEach((doc, err) => {
+      projectArray.push(doc)
+    }, () => {
+      client.close()
+      return res.json({ success: true, data: projectArray })
+      }) //> render
+  })
+})
+
+//> Use our router configuration when we call /api
+app.use('/api', router)
+
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
-app.listen(POST, () => {
+app.listen(PORT, () => {
   console.log(`Now connected on post ${PORT}`)
 })

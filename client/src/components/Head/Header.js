@@ -23,7 +23,7 @@ class Header extends React.Component {
     e.stopPropagation()
   }
 
-  render() {
+  render(props) {
     return (
       <div>
         <header>

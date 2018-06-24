@@ -243,6 +243,7 @@ h1 {
     margin: 10vh 0 4vh;
   }
   @media screen and (min-width: 1000px) {
+    // font-size: 5.25vw;
     margin: 12vh 0 2vh;
   }
 }
@@ -279,7 +280,7 @@ a {
   }
 }
 
-.inner_page {
+#not_index {
   a {
     &:before {
       background: black;
@@ -312,22 +313,7 @@ li {
   padding: 0 8vw 8vw;
   overflow-y: auto;
   position: relative;
-  &::-webkit-scrollbar {
-      display: none;
-  }
-  &::-webkit-scrollbar-thumb {
-    display: none;
-  }
-  &::-webkit-scrollbar-corner {
-    display: none;
-  }
   @media screen and (min-width: 600px) {
     padding-bottom: 3vw;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
   }
 }

@@ -18,7 +18,7 @@
   }
 }
 
-.inner_page {
+#not_index {
   #main_logo {
     color: var(--black);
   }
@@ -26,6 +26,9 @@
     li {
       a {
         color: var(--black);
+        &:before {
+          background:var(--black);
+        }
       }
     }
   }

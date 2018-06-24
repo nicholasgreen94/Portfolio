@@ -1,4 +1,21 @@
 
+#index {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/me.jpg') no-repeat bottom center;
+  background-position: 0 0;
+  background-size: cover;
+  #site_content {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+    &::-webkit-scrollbar-corner {
+      display: none;
+    }
+  }
+}
+
 #home_page {
   lost-utility: clearfix;
   h1 {

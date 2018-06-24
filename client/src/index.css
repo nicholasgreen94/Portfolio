@@ -268,7 +268,7 @@ a {
   a:hover:before {
     width: 37%; }
 
-#not_index a:before {
+.inner_page a:before {
   background: black; }
 
 ul {
@@ -309,23 +309,21 @@ li {
         transition-delay: none;
         transition: none; } }
 
-#not_index #main_logo {
+.inner_page #main_logo {
   color: var(--black); }
 
-#not_index .main_nav li a {
+.inner_page .main_nav li a {
   color: var(--black); }
-  #not_index .main_nav li a:before {
-    background: var(--black); }
 
-#not_index #menu_icon.menu_shown span {
+.inner_page #menu_icon.menu_shown span {
   transition: background-color 0.52s cubic-bezier(0.38, 0.23, 0.35, 1);
   background: var(--black); }
-  #not_index #menu_icon.menu_shown span:before, #not_index #menu_icon.menu_shown span:after {
+  .inner_page #menu_icon.menu_shown span:before, .inner_page #menu_icon.menu_shown span:after {
     background: var(--black); }
 
-#not_index #menu_icon span {
+.inner_page #menu_icon span {
   background: var(--black); }
-  #not_index #menu_icon span:before, #not_index #menu_icon span:after {
+  .inner_page #menu_icon span:before, .inner_page #menu_icon span:after {
     content: '';
     background: var(--black); }
 
@@ -432,17 +430,6 @@ li {
     .main_nav {
       top: 12vh; } }
 
-#index {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/me.jpg") no-repeat bottom center;
-  background-position: 0 0;
-  background-size: cover; }
-  #index #site_content::-webkit-scrollbar {
-    display: none; }
-  #index #site_content::-webkit-scrollbar-thumb {
-    display: none; }
-  #index #site_content::-webkit-scrollbar-corner {
-    display: none; }
-
 #home_page {
   lost-utility: clearfix; }
   #home_page h1 {
@@ -470,13 +457,13 @@ li {
     #home_page .intro_p {
       max-width: 35vw; } }
 
-#not_index h1 {
+.inner_page h1 {
   margin: 56px 0 84px;
   position: relative; }
   @media screen and (min-width: 600px) {
-    #not_index h1 {
+    .inner_page h1 {
       margin: 84px 0 124px; }
-      #not_index h1:after {
+      .inner_page h1:after {
         transform: translate3d(-50%, 112px, 0); } }
 
 #projects_wrapper {
