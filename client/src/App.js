@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link, withRouter } from 'react-router-dom'
+import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
@@ -57,10 +57,12 @@ class App extends React.Component {
         <div id={this.state.page}>
           <div id='site_content'>
             <Header />
-            <Route exact path="/" component={Index}/>
-            <Route path="/projects" component={Work} />
-            <Route path="/:id" component={ProjectDetail} />
-            <Route path="/contact" component={Contact} />
+            <Switch>
+              <Route exact path="/" component={Index}/>
+              <Route path="/projects" component={Work} />
+              <Route path="/:id" component={ProjectDetail} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
           </div>
         </div>
       </div>
