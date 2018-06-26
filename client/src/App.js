@@ -5,7 +5,7 @@ import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
 import ProjectDetail from './components/Pages/ProjectDetail'
-import Contact from './components/Pages/Contact'
+const Barba = require('barba.js')
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class App extends React.Component {
       page: 'index'
     }
   }
+
 
   componentDidMount() {
     if (window.location.href === 'http://localhost:3000/') {
@@ -25,6 +26,36 @@ class App extends React.Component {
         page: 'not_index'
       })
     }
+    Barba.Pjax.start()
+    var FadeTransition = Barba.BaseTransition.extend({
+      start: function() {
+        // As soon the loading is finished and the old page is faded out, let's fade the new page
+        Promise
+          .all([this.newContainerLoading, this.fadeOut()])
+          .then(this.fadeIn.bind(this));
+      },
+
+      fadeOut: function() {
+        return this.oldContainer.velocity({ opacity: 1 }, { duration: 1000 }).promise();
+      },
+
+      fadeIn: function() {
+        var _this = this;
+        var $el = this.newContainer
+
+        this.oldContainer.hide();
+        $el.velocity({
+          visibility : 'visible',
+          opacity : 0
+        });
+         $el.velocity({ opacity: 1 }, {duration: 400}, function() {
+           _this.done();
+         });
+      }
+    });
+    Barba.Pjax.getTransition = function() {
+      return FadeTransition;
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,17 +83,21 @@ class App extends React.Component {
           <meta name='google-site-verification' content='hyzXFGFjk3fC3uZpibiq6tw6C4RBTDJRB4ARJ9U9PbY' />
           <link rel='stylesheet' href='https://use.typekit.net/phl2bvx.css' />
           <link rel="canonical" href="http://nicholasgreendesigns.com/" />
+          <script src='//cdnjs.cloudflare.com/ajax/libs/velocity/2.0.3/velocity.min.js'></script>
         </Helmet>
         <Link to='#site_content'></Link>
-        <div id={this.state.page}>
-          <div id='site_content'>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={Index}/>
-              <Route path="/projects" component={Work} />
-              <Route path="/:id" component={ProjectDetail} />
-              <Route path="/contact" component={Contact} />
-            </Switch>
+        <div id="barba-wrapper">
+          <div className="barba-container">
+            <div id={this.state.page}>
+              <div id='site_content'>
+                <Header />
+                  <Switch>
+                    <Route exact path="/" component={Index}/>
+                    <Route path="/projects" component={Work} />
+                    <Route path="/:id" component={ProjectDetail} />
+                  </Switch>
+              </div>
+            </div>
           </div>
         </div>
       </div>

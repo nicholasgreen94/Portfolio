@@ -12,7 +12,7 @@ class MobileNavigation extends React.Component {
         <ul>
           <li><Link to='/'><div className="number">01</div> Home</Link></li>
           <li><Link to='/projects'><div className="number">02</div> Projects</Link></li>
-          <li><Link to='/contact'><div className="number">03</div> Contact</Link></li>
+          <li><a href="mailto:nicholasgreendesigns@gmail.com"><div className="number">03</div> Email</a></li>
         </ul>
       </div>
     )

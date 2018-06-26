@@ -1,27 +1,50 @@
 
-.project_tags {
-  display: inline-block;
-  text-align: center;
-}
-
 .project_description {
   color: var(--textColor);
-  margin: 0 auto;
+  margin: 0 auto 18px;
   max-width: 320px;
   text-align: center;
   @media screen and (min-width: 600px) {
-    font-size: 18px;
     max-width: 480px;
   }
-  @media screen and (min-width: 1000px) {
-    font-size: 20px
+}
+
+#not_index {
+  .project_title {
+    margin-bottom: 6px;
+  }
+  @media screen and (min-width: 600px) {
+    .project_title {
+      margin-bottom: 2px;
+    }
   }
 }
 
 .tag_wrapper {
+  margin-bottom: 64px;
   text-align: center;
+  &:after {
+    content: '';
+    background: var(--black);
+    height: 36px;
+    transform: translate3d(-50%, 40px,0);
+    width: 1px;
+    position: absolute;
+    left: 50%;
+  }
+  .project_tags {
+    display: inline-block;
+    margin-right: 4px;
+    text-align: center;
+  }
 }
 
-.project_tags {
-  margin-right: 4px;
+
+
+.project_link {
+  display: block;
+  text-align: center;
+  a {
+    font-weight: 900;
+  }
 }

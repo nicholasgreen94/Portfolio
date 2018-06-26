@@ -12,18 +12,9 @@
     }
   }
   h1 {
-    margin: 56px 0 84px;
-    font-size: 6vh;
+    margin: 56px 0 48px;
+    font-size: 11vw;
     position: relative;
-    // &:after {
-    //   content: '';
-    //   background: var(--black);
-    //   height: 36px;
-    //   transform: translate3d(-50%, 72px,0);
-    //   width: 2px;
-    //   position: absolute;
-    //   left: 50%;
-    // }
     @media screen and (min-width: 600px) {
       margin: 84px 0 124px;
       &:after {
@@ -31,6 +22,8 @@
       }
     }
     @media screen and (min-width: 1000px) {
+      font-size: 6vw;
+
       // margin-bottom: 24vh;
     }
   }
@@ -133,27 +126,21 @@
   }
 }
 
-#project_page {
-  position: relative;
-  .tag {
-    display: block;
-    text-align: center;
-    transform: translate3d(-50%, 12vw, 0);
-    position: absolute;
-    top: 0;
-    left: 50%;
+
+#photos {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 10vw;
+  width: 90%;
+  .photo {
+    margin-bottom: 30px;
   }
-  p:first-of-type {
-    text-align: center;
-    transform: translate3d(-50%, 0, 0);
-    width: 100%;
-    position: absolute;
-    top: 36vw;
-    left: 50%;
-  }
-  @media screen and (min-width: 750px) {
-    .tag {
-      transform: translate3d(-50%, 8vw, 0);
+  @media screen and (min-width: 600px) {
+    .photo {
+      margin-bottom: 60px;
     }
+  }
+  @media screen and (min-width: 1000px) {
+    padding-top: 6vw;
   }
 }

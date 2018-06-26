@@ -1,5 +1,5 @@
 import React from 'react'
-// import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 class ProjectDetail extends React.Component{
     state = {
@@ -23,9 +23,9 @@ class ProjectDetail extends React.Component{
   render() {
     const state = this.state.data
     return (
-        <div className="inner_page">
+      <div className="inner_page">
         { state &&
-          <h1>{state.name}</h1>
+          <h1 className="project_title">{state.name}</h1>
         }
         { state && state.tags &&
           <div className="tag_wrapper">{
@@ -40,6 +40,15 @@ class ProjectDetail extends React.Component{
           </div>
         }
         <p className="project_description">{state.description}</p>
+        <div className="project_link"><Link to="{state.url}">{state.view_button_text}</Link></div>
+        { state && state.photos &&
+          <div id="photos">
+            { state.photos.map((photo, i) => {
+                return <div className="photo" key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
+            })
+        }
+        </div>
+      }
         </div>
       )
     }

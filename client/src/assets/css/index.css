@@ -293,32 +293,47 @@ li {
     #site_content {
       padding-bottom: 3vw; } }
 
-.project_tags {
-  display: inline-block;
-  text-align: center; }
-
 .project_description {
   color: var(--textColor);
-  margin: 0 auto;
+  margin: 0 auto 18px;
   max-width: 320px;
   text-align: center; }
   @media screen and (min-width: 600px) {
     .project_description {
-      font-size: 18px;
       max-width: 480px; } }
-  @media screen and (min-width: 1000px) {
-    .project_description {
-      font-size: 20px; } }
+
+#not_index .project_title {
+  margin-bottom: 6px; }
+
+@media screen and (min-width: 600px) {
+  #not_index .project_title {
+    margin-bottom: 2px; } }
 
 .tag_wrapper {
+  margin-bottom: 64px;
   text-align: center; }
+  .tag_wrapper:after {
+    content: '';
+    background: var(--black);
+    height: 36px;
+    transform: translate3d(-50%, 40px, 0);
+    width: 1px;
+    position: absolute;
+    left: 50%; }
+  .tag_wrapper .project_tags {
+    display: inline-block;
+    margin-right: 4px;
+    text-align: center; }
 
-.project_tags {
-  margin-right: 4px; }
+.project_link {
+  display: block;
+  text-align: center; }
+  .project_link a {
+    font-weight: 900; }
 
 #main_logo {
   color: var(--white);
-  font-weight: 400;
+  font-weight: 900;
   transition: color 0.52s cubic-bezier(0.38, 0.23, 0.35, 1);
   transition-delay: 0;
   z-index: 700;
@@ -503,14 +518,17 @@ li {
   display: none; }
 
 #not_index h1 {
-  margin: 56px 0 84px;
-  font-size: 6vh;
+  margin: 56px 0 48px;
+  font-size: 11vw;
   position: relative; }
   @media screen and (min-width: 600px) {
     #not_index h1 {
       margin: 84px 0 124px; }
       #not_index h1:after {
         transform: translate3d(-50%, 112px, 0); } }
+  @media screen and (min-width: 1000px) {
+    #not_index h1 {
+      font-size: 6vw; } }
 
 #not_index .project {
   background: var(--white);
@@ -594,22 +612,16 @@ li {
       font-size: 12px;
       margin-top: 4vw; } }
 
-#project_page {
-  position: relative; }
-  #project_page .tag {
-    display: block;
-    text-align: center;
-    transform: translate3d(-50%, 12vw, 0);
-    position: absolute;
-    top: 0;
-    left: 50%; }
-  #project_page p:first-of-type {
-    text-align: center;
-    transform: translate3d(-50%, 0, 0);
-    width: 100%;
-    position: absolute;
-    top: 36vw;
-    left: 50%; }
-  @media screen and (min-width: 750px) {
-    #project_page .tag {
-      transform: translate3d(-50%, 8vw, 0); } }
+#photos {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 10vw;
+  width: 90%; }
+  #photos .photo {
+    margin-bottom: 30px; }
+  @media screen and (min-width: 600px) {
+    #photos .photo {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 1000px) {
+    #photos {
+      padding-top: 6vw; } }

@@ -214,7 +214,7 @@ html {
 body {
   background: white;
   box-sizing: border-box;
-  font-family: "europa", serif;
+  font-family: "europa", sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -292,6 +292,29 @@ li {
   @media screen and (min-width: 600px) {
     #site_content {
       padding-bottom: 3vw; } }
+
+.project_tags {
+  display: inline-block;
+  text-align: center; }
+
+.project_description {
+  color: var(--textColor);
+  margin: 0 auto;
+  max-width: 320px;
+  text-align: center; }
+  @media screen and (min-width: 600px) {
+    .project_description {
+      font-size: 18px;
+      max-width: 480px; } }
+  @media screen and (min-width: 1000px) {
+    .project_description {
+      font-size: 20px; } }
+
+.tag_wrapper {
+  text-align: center; }
+
+.project_tags {
+  margin-right: 4px; }
 
 #main_logo {
   color: var(--white);

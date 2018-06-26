@@ -36,8 +36,8 @@ class Work extends React.Component {
          )
        })
      return (
-         <div className="inner_page">
-           <h1>Ahh yeah, projects</h1>
+       <div className="inner_page">
+           <h1>Projects</h1>
            <div id='projects_wrapper'>
              <Masonry
                breakpointCols={breakpointColumnsObj}
@@ -46,7 +46,7 @@ class Work extends React.Component {
                {ProjectList}
              </Masonry>
            </div>
-         </div>
+        </div>
        )
    }
   }

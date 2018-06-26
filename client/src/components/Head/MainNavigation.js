@@ -7,6 +7,7 @@ class MainNavigation extends React.Component {
     if (this.props.menuVisibility) {
       visibility = 'menu_shown'
     }
+
     return(
       <div id="main_header">
         <Link to="/"><span id="main_logo" className={visibility}>Nicholas Green</span></Link>
@@ -18,7 +19,7 @@ class MainNavigation extends React.Component {
             <ul className="main_nav">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><a href="mailto:nicholasgreendesigns@gmail.com">Mail</a></li>
             </ul>
           </Switch>
         </nav>
