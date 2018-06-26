@@ -470,8 +470,18 @@ li {
     #home_page .intro_p {
       max-width: 35vw; } }
 
+#not_index #site_content::-webkit-scrollbar {
+  display: none; }
+
+#not_index #site_content::-webkit-scrollbar-thumb {
+  display: none; }
+
+#not_index #site_content::-webkit-scrollbar-corner {
+  display: none; }
+
 #not_index h1 {
   margin: 56px 0 84px;
+  font-size: 6vh;
   position: relative; }
   @media screen and (min-width: 600px) {
     #not_index h1 {
@@ -479,31 +489,7 @@ li {
       #not_index h1:after {
         transform: translate3d(-50%, 112px, 0); } }
 
-#projects_wrapper {
-  max-width: 360px;
-  margin: 0 auto; }
-  @media screen and (min-width: 600px) {
-    #projects_wrapper {
-      max-width: 800px; } }
-  @media screen and (min-width: 1000px) {
-    #projects_wrapper {
-      max-width: 1000px; } }
-
-.masonry_grid {
-  display: -webkit-box;
-  /* Not needed if autoprefixing */
-  display: -ms-flexbox;
-  /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: -60px;
-  /* gutter size offset */
-  width: auto; }
-
-.masonry_column {
-  padding-left: 60px;
-  background-clip: padding-box; }
-
-.project {
+#not_index .project {
   background: var(--white);
   cursor: pointer;
   line-height: 0;
@@ -511,10 +497,10 @@ li {
   pointer-events: auto;
   z-index: 400;
   position: relative; }
-  .project:before, .project:after {
+  #not_index .project:before, #not_index .project:after {
     transition: 0.34s opacity;
     will-change: opacity; }
-  .project:before {
+  #not_index .project:before {
     content: '';
     background: var(--overlayColor);
     height: 100%;
@@ -524,7 +510,7 @@ li {
     position: absolute;
     top: 0;
     left: 0; }
-  .project:after {
+  #not_index .project:after {
     content: attr(data-title);
     color: var(--white);
     display: block;
@@ -540,18 +526,42 @@ li {
     position: absolute;
     top: 50%;
     left: 50%; }
-  .project:hover:before, .project:hover:after {
+  #not_index .project:hover:before, #not_index .project:hover:after {
     transition: 0.34s opacity;
     will-change: opacity; }
-  .project:hover:before {
+  #not_index .project:hover:before {
     opacity: 1;
     z-index: 500; }
-  .project:hover:after {
+  #not_index .project:hover:after {
     opacity: 1;
     transition-delay: 0.1s;
     z-index: 600; }
-  .project img {
-    position: relative !important; }
+  #not_index .project a:before {
+    background: none; }
+
+#projects_wrapper {
+  max-width: 360px;
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    #projects_wrapper {
+      max-width: 800px; } }
+  @media screen and (min-width: 1000px) {
+    #projects_wrapper {
+      max-width: none; } }
+
+.masonry_grid {
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -60px;
+  /* gutter size offset */
+  width: auto; }
+
+.masonry_column {
+  padding-left: 60px;
+  background-clip: padding-box; }
 
 .back {
   display: none; }
