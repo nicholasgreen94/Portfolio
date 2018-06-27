@@ -55,7 +55,7 @@
       content: attr(data-title);
       color: var(--white);
       display: block;
-      font-size: 16px;
+      font-size: 14px;
       letter-spacing: 4px;
       opacity: 0;
       pointer-events: none;
@@ -67,6 +67,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      @media screen and (min-width: 1000px) {
+        font-size: 16px;
+      }
     }
     &:hover {
       &:before,
@@ -83,6 +86,9 @@
         transition-delay: 0.1s;
         z-index: 600;
       }
+    }
+    img {
+      width: 100%;
     }
     a {
       &:before {

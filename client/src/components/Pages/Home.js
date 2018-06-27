@@ -7,7 +7,7 @@ const Index = () => (
     <div id="home_page">
       <h1>I am a UI / UX Designer and Web Developer</h1>
       <div className="intro_p">
-        <p>Unicorn etsy messenger bag swag. Brooklyn yr locavore PBR&B kickstarter direct trade mumblecore ramps messenger bag ennui. Trust fund affogato viral, forage celiac you probably haven't heard of them ennui bitters everyday carry crucifix truffaut prism godard hella disrupt. Bitters aesthetic cornhole you probably haven't heard of them lomo succulents franzen disrupt air plant man bun wolf shoreditch biodiesel edison bulb mlkshk.</p>
+        <p>Hi there, I'm Nick! As stated above I am a UI/UX and web developer. Everything I work on is done with purpose and focused on bringing the best experience to the users. I strive to continually grow with my team and bring new ideas with fresh perspectives. I like to work on projects that are challenging and solve them with design, breaking down complex problems into simple solutions.</p>
         <Link to="/Projects">View Projects <LinkArrow></LinkArrow></Link>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Typekit from 'react-typekit';
 import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
@@ -51,16 +52,18 @@ class App extends React.Component {
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
             <meta keywords="HTML, CSS, JavaScript, Websites, Website Design, Website Developer, Web Designer Phoenix, Web Developer Phoenix, Web Designer Arizona, Web Developer Arizona, Web Developer Tucson, Web Desiginer Tucson, Phoenix, Tucson, Arizona, Nicholas, Green, Nicholas Green, Graphic Design"/>
             <meta name='google-site-verification' content='hyzXFGFjk3fC3uZpibiq6tw6C4RBTDJRB4ARJ9U9PbY' />
-            <link rel='stylesheet' href='https://use.typekit.net/phl2bvx.css' />
             <link rel="canonical" href="http://nicholasgreendesigns.com/" />
           </Helmet>
-          <Link to='#site_content'></Link>
+          <Typekit kitId="phl2bvx" />
+          <Link to='#skip' id="skip_nav">{"Skip Nav"}</Link>
             <div id={this.state.page} >
               <div id='site_content'>
                 <Header />
+                <a id="skip"></a>
                 <TransitionGroup>
                   <CSSTransition
                     key={location.key}
+                    timeout={0}
                     classNames='fade'
                   >
                 <Switch location={location}>

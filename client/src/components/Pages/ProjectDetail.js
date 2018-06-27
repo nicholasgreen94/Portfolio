@@ -40,7 +40,7 @@ class ProjectDetail extends React.Component{
           </div>
         }
         <p className="project_description">{state.description}</p>
-        <div className="project_link"><Link to="{state.url}">{state.view_button_text}</Link></div>
+        <div className="project_link"><a href={state.url} target="_blank" title="Link to a new page" rel="noopener">{state.view_button_text}</a></div>
         { state && state.photos &&
           <div id="photos">
             { state.photos.map((photo, i) => {
