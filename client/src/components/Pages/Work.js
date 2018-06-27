@@ -1,7 +1,6 @@
 import React from 'react'
 import Masonry from 'react-masonry-css'
 import Project from './Project'
-// import ProjectDetail from './ProjectDetail'
 
 const breakpointColumnsObj = {
   default: 3,
