@@ -11,6 +11,10 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 const router = express.Router()
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 app.use(express.static('client/build'))
 dotenv.load()
 
