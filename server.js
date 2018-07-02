@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-app.use(express.static('client/build'))
 dotenv.load()
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/ngreendesigns"
