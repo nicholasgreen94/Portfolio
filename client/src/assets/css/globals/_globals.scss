@@ -214,6 +214,15 @@ html {
   box-sizing: inherit;
 }
 
+//> wait for typekit font to load, then display.
+.wf-loading {
+  opacity: 0;
+}
+
+.wf-active {
+  opacity: 1;
+}
+
 #skip_nav {
   position: fixed;
   left: -10000px;
@@ -275,7 +284,7 @@ a {
   position: relative;
   &:before {
     content: '';
-    background: white;
+    background: var(--black);
     border-radius: 8px;
     height: 2px;
     overflow: hidden;
@@ -295,7 +304,7 @@ a {
 #not_index {
   a {
     &:before {
-      background: black;
+      background: var(--black);
     }
   }
 }

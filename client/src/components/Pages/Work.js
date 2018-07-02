@@ -1,5 +1,7 @@
 import React from 'react'
 import Masonry from 'react-masonry-css'
+import { Helmet } from 'react-helmet'
+import { TweenMax } from 'gsap'
 import Project from './Project'
 
 const breakpointColumnsObj = {
@@ -27,27 +29,34 @@ class Work extends React.Component {
   }
 
   render() {
-     const ProjectList = this.state.data.map(function(project){
+    TweenMax.to('h1', 1.25, { opacity: 1, y: 1 })
+     const ProjectList = this.state.data.map(function(project, i){
         return (
-             <div className='project' key={project._id} data-title={project.name}>
+             <div className={'project ' + 'project_' + i} key={project._id} data-title={project.name}>
                {<Project project={project} />}
              </div>
          )
        })
      return (
-       <div className="inner_page">
-           <h1>Projects</h1>
-           <div id='projects_wrapper'>
-             <Masonry
-               breakpointCols={breakpointColumnsObj}
-               className="masonry_grid"
-               columnClassName="masonry_column">
-               {ProjectList}
-             </Masonry>
-           </div>
+       <div>
+         <Helmet>
+           <title>Projects | Nicholas Green | UI/UX Designer and Developer</title>
+           <meta name="description" content="My latest projects from website design, branding, web development and more." />
+         </Helmet>
+         <div className="inner_page">
+             <h1>Projects</h1>
+             <div id='projects_wrapper'>
+               <Masonry
+                 breakpointCols={breakpointColumnsObj}
+                 className="masonry_grid"
+                 columnClassName="masonry_column">
+                 {ProjectList}
+               </Masonry>
+             </div>
+          </div>
         </div>
        )
-   }
+     }
   }
 
 export default Work

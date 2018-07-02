@@ -1,1 +1,42 @@
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tag_wrapper {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -40px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes tag_wrapper_after {
+  0% {
+    height: 0;
+    transform: translate3d(-50%, 10px, 0);
+  }
+  100% {
+    height: 36px;
+    transform: translate3d(-50%, 40px, 0);
+  }
+}
+
+@keyframes project_description {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

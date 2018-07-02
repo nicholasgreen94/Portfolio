@@ -1,5 +1,4 @@
 const express = require("express")
-// const routes = require('./routes/')
 const logger = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -12,13 +11,8 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 const router = express.Router()
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'))
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.load()
-}
+app.use(express.static('client/build'))
+dotenv.load()
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/ngreendesigns"
 

@@ -19,7 +19,7 @@ class MainNavigation extends React.Component {
             <ul className="main_nav">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/projects">Projects</Link></li>
-              <li><a href="mailto:nicholasgreendesigns@gmail.com">Mail</a></li>
+              <li><a href="mailto:nicholasgreendesigns@gmail.com">Email</a></li>
             </ul>
           </Switch>
         </nav>

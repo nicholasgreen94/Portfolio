@@ -1,8 +1,8 @@
 
 #index {
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/me.jpg') no-repeat bottom center;
-  background-position: 0 0;
-  background-size: cover;
+  // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/me.jpg') no-repeat bottom center;
+  // background-position: 0 0;
+  // background-size: cover;
   #site_content {
     &::-webkit-scrollbar {
         display: none;
@@ -19,19 +19,24 @@
 #home_page {
   lost-utility: clearfix;
   h1 {
-    color: var(--white);
+    color: var(--black);
+    opacity: 0;
     text-align: left;
+    transform: translate3d(0, -50px, 0);
   }
   p {
-    color: var(--white);
+    color: var(--black);
     font-size: 16px;
     font-weight: 100;
     line-height: 1.5;
     margin-bottom: 10vh;
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
   }
   a {
-    color: var(--white);
+    color: var(--black);
     font-weight: 700;
+    opacity: 0;
     &:hover {
       span {
         transform: translate3d(1vw, 0, 0);
