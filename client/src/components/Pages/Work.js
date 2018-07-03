@@ -24,7 +24,7 @@ class Work extends React.Component {
         data: project.data
       })
     } catch (err) {
-      console.log(err.message)
+      console.log(err)
     }
   }
 
