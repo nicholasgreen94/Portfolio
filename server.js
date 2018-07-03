@@ -34,11 +34,10 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello World' })
 })
 
-
 router.get('/projects', (req, res) => {
   MongoClient.connect(url, (err, client) => {
     if (err) return err
-    const db = client.db('portfolio')
+    const db = client.db('heroku_6352g3rh')
     const projection = { "_id": 0 }
     //> cursor for database
     var cursor = db.collection('project_information').find({}, projection).sort({ '_id': -1 })
@@ -56,7 +55,7 @@ router.get('/projects', (req, res) => {
 router.get('/:id', (req, res) => {
   MongoClient.connect(url, (err, client) => {
     if (err) return err
-    const db = client.db('portfolio')
+    const db = client.db('heroku_6352g3rh')
     const projection = { "_id": 0 }
     //> cursor for database
     var cursor = db.collection('project_information').find({ uri_name: req.params.id }, projection).sort({ '_id': -1 })
