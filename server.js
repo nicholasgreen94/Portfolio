@@ -11,10 +11,14 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 const router = express.Router()
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
-
+// if(process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'))
+// }
+//
+// if (process.env.NODE_ENV !== 'production') {
+//   dotenv.load();
+// }
+app.use(express.static('client/build'))
 dotenv.load()
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/ngreendesigns"
@@ -33,10 +37,9 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello World' })
 })
 
-
-router.get('/projects', (req, res) => {
+router.get('http://localhost:3000/projects', (req, res) => {
   MongoClient.connect(url, (err, client) => {
-    if (err) return error
+    if (err) return err
     const db = client.db('portfolio')
     const projection = { "_id": 0 }
     //> cursor for database
@@ -54,7 +57,7 @@ router.get('/projects', (req, res) => {
 
 router.get('/:id', (req, res) => {
   MongoClient.connect(url, (err, client) => {
-    if (err) return error
+    if (err) return err
     const db = client.db('portfolio')
     const projection = { "_id": 0 }
     //> cursor for database
@@ -74,11 +77,10 @@ router.get('/:id', (req, res) => {
 //> Use our router configuration when we call /api
 app.use('/api', router)
 
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
 app.listen(PORT, () => {
-  console.log(`Now connected on post ${PORT}`)
+  console.log(`Now connected on port ${PORT}`)
 })

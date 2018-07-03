@@ -52,7 +52,7 @@ class ProjectDetail extends React.Component{
               <div id="photos">
                 { state.photos.map((photo, i) => {
                   console.log(i)
-                    return <div className={'photo ' + 'photo_' + i} key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
+                    return <div className={`photo photo_${i}`} key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
                 })
             }
             </div>

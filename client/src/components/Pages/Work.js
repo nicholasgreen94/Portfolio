@@ -32,7 +32,7 @@ class Work extends React.Component {
     TweenMax.to('h1', 1.25, { opacity: 1, y: 1 })
      const ProjectList = this.state.data.map(function(project, i){
         return (
-             <div className={'project ' + 'project_' + i} key={project._id} data-title={project.name}>
+             <div className={`project project_i`} key={project._id} data-title={project.name}>
                {<Project project={project} />}
              </div>
          )
