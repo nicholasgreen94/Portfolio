@@ -11,18 +11,15 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 const router = express.Router()
 
-// if(process.env.NODE_ENV === 'production') {
-//   app.use(express.static('client/build'))
-// }
-//
-// if (process.env.NODE_ENV !== 'production') {
-//   dotenv.load();
-// }
-app.use(express.static('client/build'))
-dotenv.load()
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.load();
+}
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/ngreendesigns"
-
 //> Set our port to either a predetermined port number if you have set it up, or 3001
 const PORT = process.env.PORT || 3001
 
@@ -37,7 +34,8 @@ router.get('/', (req, res) => {
   res.json({ message: 'Hello World' })
 })
 
-router.get('http://localhost:3000/projects', (req, res) => {
+
+router.get('/projects', (req, res) => {
   MongoClient.connect(url, (err, client) => {
     if (err) return err
     const db = client.db('portfolio')
