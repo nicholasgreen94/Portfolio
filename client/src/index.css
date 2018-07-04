@@ -310,8 +310,9 @@ a {
     position: absolute;
     left: 0;
     bottom: -4px; }
-  a:hover:before {
-    width: 37%; }
+  @media screen and (min-width: 600px) {
+    a:hover:before {
+      width: 37%; } }
 
 #not_index a:before {
   background: var(--black); }
@@ -543,15 +544,6 @@ li {
     .main_nav {
       top: 12vh; } }
 
-#index #site_content::-webkit-scrollbar {
-  display: none; }
-
-#index #site_content::-webkit-scrollbar-thumb {
-  display: none; }
-
-#index #site_content::-webkit-scrollbar-corner {
-  display: none; }
-
 #home_page {
   lost-utility: clearfix; }
   #home_page h1 {
@@ -571,8 +563,9 @@ li {
     color: var(--black);
     font-weight: 700;
     opacity: 0; }
-    #home_page a:hover span {
-      transform: translate3d(1vw, 0, 0); }
+    @media screen and (min-width: 600px) {
+      #home_page a:hover span {
+        transform: translate3d(1vw, 0, 0); } }
   @media screen and (min-width: 600px) {
     #home_page .intro_p {
       lost-column: 1;
@@ -583,15 +576,6 @@ li {
   @media screen and (min-width: 1000px) {
     #home_page .intro_p {
       max-width: 35vw; } }
-
-#not_index #site_content::-webkit-scrollbar {
-  display: none; }
-
-#not_index #site_content::-webkit-scrollbar-thumb {
-  display: none; }
-
-#not_index #site_content::-webkit-scrollbar-corner {
-  display: none; }
 
 #not_index h1 {
   margin: 56px 0 48px;
@@ -665,16 +649,17 @@ li {
     @media screen and (min-width: 1000px) {
       #not_index .project:after {
         font-size: 16px; } }
-  #not_index .project:hover:before, #not_index .project:hover:after {
-    transition: 0.34s opacity;
-    will-change: opacity; }
-  #not_index .project:hover:before {
-    opacity: 1;
-    z-index: 500; }
-  #not_index .project:hover:after {
-    opacity: 1;
-    transition-delay: 0.1s;
-    z-index: 600; }
+  @media screen and (min-width: 600px) {
+    #not_index .project:hover:before, #not_index .project:hover:after {
+      transition: 0.34s opacity;
+      will-change: opacity; }
+    #not_index .project:hover:before {
+      opacity: 1;
+      z-index: 500; }
+    #not_index .project:hover:after {
+      opacity: 1;
+      transition-delay: 0.1s;
+      z-index: 600; } }
   #not_index .project img {
     width: 100%; }
   #not_index .project a:before {

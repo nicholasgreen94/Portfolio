@@ -3,6 +3,7 @@
   --black: rgba(0,0,0,0.85);
   --textColor: rgba(0,0,0,.60);
   --overlayColor: rgba(0,0,0,.50);
+  --bgColor: rgba(0, 0, 0, .02);
   --white: #fefefe;
   --blue: #008DFF;
 }
@@ -235,7 +236,7 @@ html {
 }
 
 body {
-  background: white;
+  background: var(--bgColor);
   box-sizing: border-box;
   font-family: $body_font;
   font-size: 16px;
