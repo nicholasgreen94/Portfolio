@@ -9,15 +9,15 @@ import Work from './components/Pages/Work'
 import ProjectDetail from './components/Pages/ProjectDetail'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: 'index',
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     page: 'index',
+  //   }
+  // }
 
   componentDidMount() {
-    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'http://blissful-meninsky-30d9dd.netlify.com/') {
+    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://nicholasgreendesigns.herokuapp.com/') {
       this.setState({
         page: 'index'
       })
