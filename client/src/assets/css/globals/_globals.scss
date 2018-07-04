@@ -294,9 +294,11 @@ a {
     left: 0;
     bottom: -4px;
   }
-  &:hover {
-    &:before {
-      width: 37%;
+  @media screen and (min-width: 600px) {
+    &:hover {
+      &:before {
+        width: 37%;
+      }
     }
   }
 }

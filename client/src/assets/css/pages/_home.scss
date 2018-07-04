@@ -3,17 +3,6 @@
   // background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/me.jpg') no-repeat bottom center;
   // background-position: 0 0;
   // background-size: cover;
-  #site_content {
-    &::-webkit-scrollbar {
-        display: none;
-    }
-    &::-webkit-scrollbar-thumb {
-      display: none;
-    }
-    &::-webkit-scrollbar-corner {
-      display: none;
-    }
-  }
 }
 
 #home_page {
@@ -37,9 +26,11 @@
     color: var(--black);
     font-weight: 700;
     opacity: 0;
-    &:hover {
-      span {
-        transform: translate3d(1vw, 0, 0);
+    @media screen and (min-width: 600px) {
+      &:hover {
+        span {
+          transform: translate3d(1vw, 0, 0);
+        }
       }
     }
   }
