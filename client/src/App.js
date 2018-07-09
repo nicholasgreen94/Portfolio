@@ -51,8 +51,15 @@ class App extends React.Component {
             <meta name="description" content="I am a web designer and developer living in Tucson, AZ. Along with designing an developing websites, I help with website optimization, content, and marketing." />
             <meta http-equiv='x-ua-compatible' content='ie=edge' />
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-            <meta keywords="HTML, CSS, JavaScript, Websites, Website Design, Website Developer, Web Designer Phoenix, Web Developer Phoenix, Web Designer Arizona, Web Developer Arizona, Web Developer Tucson, Web Desiginer Tucson, Phoenix, Tucson, Arizona, Nicholas, Green, Nicholas Green, Graphic Design"/>
+            <meta keywords="UI, UX, User Experience, User Interface, User Interaction, HTML, CSS, JavaScript, Websites, Website Design, Website Developer, Web Designer Phoenix, Web Developer Phoenix, Web Designer Colorado, Web Developer Colorado, Web Developer Colorado, Web Desiginer Colorado, Denver, Nicholas, Green, Nicholas Green, Graphic Design"/>
             <meta name='google-site-verification' content='hyzXFGFjk3fC3uZpibiq6tw6C4RBTDJRB4ARJ9U9PbY' />
+            <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png"/>
+            <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png"/>
+            <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png"/>
+            <link rel="manifest" href="./assets/favicons/site.webmanifest"/>
+            <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#000000"/>
+            <meta name="msapplication-TileColor" content="#fefefe"/>
+            <meta name="theme-color" content="#fefefe"/>
           </Helmet>
           <Typekit kitId="phl2bvx" />
           <a to='#skip' id="skip_nav">{"Skip Nav"}</a>
