@@ -60,6 +60,13 @@ class App extends React.Component {
             <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#000000"/>
             <meta name="msapplication-TileColor" content="#fefefe"/>
             <meta name="theme-color" content="#fefefe"/>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114430954-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               gtag('config', 'UA-114430954-1');
+            </script>
           </Helmet>
           <Typekit kitId="phl2bvx" />
           <a to='#skip' id="skip_nav">{"Skip Nav"}</a>
