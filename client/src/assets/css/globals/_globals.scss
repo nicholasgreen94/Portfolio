@@ -332,10 +332,8 @@ li {
 #site_content {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100vh;
   min-height: 100%;
   padding: 0 8vw 8vw;
-  overflow-y: auto;
   position: relative;
   @media screen and (min-width: 600px) {
     padding-bottom: 3vw;

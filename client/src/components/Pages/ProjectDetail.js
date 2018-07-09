@@ -46,16 +46,18 @@ class ProjectDetail extends React.Component{
               }
             </div>
           }
-          <p className="project_description">{state.description}</p>
-          <div className="project_link"><a href={state.url} target="_blank" title="Link to a new page" rel="noopener">{state.view_button_text}</a></div>
-            { state && state.photos &&
-              <div id="photos">
-                { state.photos.map((photo, i) => {
-                  console.log(i)
-                    return <div className={`photo photo_${i}`} key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
-                })
-            }
-            </div>
+          { state && state.photos &&
+            <div>
+              <p className="project_description">{state.description}</p>
+              <div className="project_link"><a href={state.url} target="_blank" title="Link to a new page" rel="noopener">{state.view_button_text}</a></div>
+                <div id="photos">
+                  { state.photos.map((photo, i) => {
+                    console.log(i)
+                      return <div className={`photo photo_${i}`} key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
+                  })
+              }
+              </div>
+              </div>
           }
           </div>
         </div>

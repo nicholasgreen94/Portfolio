@@ -33,6 +33,7 @@
   --black: rgba(0,0,0,0.85);
   --textColor: rgba(0,0,0,.60);
   --overlayColor: rgba(0,0,0,.50);
+  --bgColor: rgba(0, 0, 0, .02);
   --white: #fefefe;
   --blue: #008DFF; }
 
@@ -257,7 +258,7 @@ html {
     position: relative; }
 
 body {
-  background: white;
+  background: var(--bgColor);
   box-sizing: border-box;
   font-family: "europa", sans-serif;
   font-size: 16px;
@@ -330,7 +331,6 @@ li {
 #site_content {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100vh;
   min-height: 100%;
   padding: 0 8vw 8vw;
   overflow-y: auto;

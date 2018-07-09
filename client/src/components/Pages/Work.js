@@ -30,6 +30,7 @@ class Work extends React.Component {
 
   render() {
     TweenMax.to('h1', 1.25, { opacity: 1, y: 1 })
+    TweenMax.to('#main_footer', 1.25, { opacity: 1, delay: 2 })
      const ProjectList = this.state.data.map(function(project, i){
         return (
              <div className={`project project_` + i}key={project._id} data-title={project.name}>

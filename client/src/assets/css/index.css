@@ -331,10 +331,8 @@ li {
 #site_content {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100vh;
   min-height: 100%;
   padding: 0 8vw 8vw;
-  overflow-y: auto;
   position: relative; }
   @media screen and (min-width: 600px) {
     #site_content {
@@ -557,7 +555,7 @@ li {
     font-size: 16px;
     font-weight: 100;
     line-height: 1.5;
-    margin-bottom: 10vh;
+    margin-bottom: 36px;
     opacity: 0;
     transform: translate3d(0, -50px, 0); }
   #home_page a {
@@ -732,3 +730,36 @@ li {
 
 .photo_4 {
   animation-delay: 6s; }
+
+#main_footer {
+  padding-bottom: 36px;
+  opacity: 0;
+  transform: translate3d(0, 84px, 0);
+  position: absolute; }
+  #main_footer li {
+    display: inline-block;
+    margin-right: 12px; }
+  #main_footer a {
+    font-size: 12px;
+    transition: .32s color; }
+  @media screen and (min-width: 600px) {
+    #main_footer li {
+      margin-right: 24px; }
+    #main_footer a {
+      font-size: 16px; }
+    #main_footer .dribbble:hover {
+      color: #ea4c89; }
+      #main_footer .dribbble:hover:before {
+        background: #ea4c89; }
+    #main_footer .behance:hover {
+      color: #1769ff; }
+      #main_footer .behance:hover:before {
+        background: #1769ff; }
+    #main_footer .instagram:hover {
+      color: #833ab4; }
+      #main_footer .instagram:hover:before {
+        background: #833ab4; }
+    #main_footer .github:hover {
+      color: #6e5494; }
+      #main_footer .github:hover:before {
+        background: #6e5494; } }

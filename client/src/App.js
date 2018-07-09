@@ -7,6 +7,7 @@ import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
 import ProjectDetail from './components/Pages/ProjectDetail'
+import Footer from './components/Footer/Footer'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://nicholasgreendesigns.herokuapp.com/') {
+    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://nicholasgreendesigns.herokuapp.com' || window.location.href === 'http://nicholasgreendesigns.com') {
       this.setState({
         page: 'index'
       })
@@ -72,6 +73,7 @@ class App extends React.Component {
                 </Switch>
                   </CSSTransition>
                 </TransitionGroup>
+                <Footer/>
                 </div>
             </div>
           </div>

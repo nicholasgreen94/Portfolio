@@ -1,0 +1,55 @@
+
+#main_footer {
+  padding-bottom: 36px;
+  opacity: 0;
+  transform: translate3d(0, 84px, 0);
+  position: absolute;
+  li {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  a {
+    font-size: 12px;
+    transition: .32s color;
+  }
+  @media screen and (min-width: 600px) {
+    li {
+      margin-right: 24px;
+    }
+    a {
+      font-size: 16px;
+    }
+    .dribbble {
+      &:hover {
+        color: #ea4c89;
+        &:before {
+          background: #ea4c89;
+        }
+      }
+    }
+    .behance {
+      &:hover {
+        color: #1769ff;
+        &:before {
+          background: #1769ff;
+        }
+      }
+    }
+    .instagram {
+      &:hover {
+        color: #833ab4;
+        &:before {
+          background: #833ab4;
+        }
+      }
+    }
+    .github {
+      &:hover {
+        color: #6e5494;
+        &:before {
+          background: #6e5494;
+        }
+      }
+    }
+  }
+}
