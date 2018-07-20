@@ -50,10 +50,10 @@ class App extends React.Component {
         <div>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>Nicholas Green | UI/UX Designer and Developer</title>
+            <title>Nicholas Green | UI / UX Designer and Developer</title>
             <meta name="description" content="I am a web designer and developer living in Tucson, AZ. Along with designing an developing websites, I help with website optimization, content, and marketing." />
-            <meta http-equiv='x-ua-compatible' content='ie=edge' />
-            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta keywords="UI, UX, User Experience, User Interface, User Interaction, HTML, CSS, JavaScript, Websites, Website Design, Website Developer, Web Designer Phoenix, Web Developer Phoenix, Web Designer Colorado, Web Developer Colorado, Web Developer Colorado, Web Desiginer Colorado, Denver, Nicholas, Green, Nicholas Green, Graphic Design"/>
             <meta name='google-site-verification' content='hyzXFGFjk3fC3uZpibiq6tw6C4RBTDJRB4ARJ9U9PbY' />
             <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png"/>
@@ -66,16 +66,16 @@ class App extends React.Component {
           </Helmet>
           <Analytics id="UA-114430954-1">
           <Typekit kitId="phl2bvx" />
-          <a href='#skip' id="skip_nav">{"Skip Nav"}</a>
+          <a href="#skip" id="skip_nav">{"Skip Nav"}</a>
             <div id={this.state.page} >
-              <div id='site_content'>
+              <div id="site_content">
                   <Header />
                   <a id="skip">{''}</a>
                   <TransitionGroup>
                     <CSSTransition
                       key={location.key}
                       timeout={0}
-                      classNames='fade'
+                      classNames="fade"
                     >
                     <Switch location={location}>
                       <Route exact path="/" component={Index}/>

@@ -14,7 +14,7 @@ class Error extends React.Component {
           <h1 className="project_title error">Oh no...</h1>
           <p className="project_description">There's been some error happening. I'm sorry about that, try refreshing the page and if that doesn't work out you can email me to let me know that something is broken.</p>
           <div className="project_link">
-            <Link to='/'>Return to Homepage</Link>
+            <Link to="/">Return to Homepage</Link>
           </div>
         </div>
       </div>

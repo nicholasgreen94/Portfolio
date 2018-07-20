@@ -3,9 +3,9 @@ import { Switch, Link } from 'react-router-dom'
 
 class MainNavigation extends React.Component {
   render() {
-    let visibility = 'menu_hidden'
+    let visibility = "menu_hidden"
     if (this.props.menuVisibility) {
-      visibility = 'menu_shown'
+      visibility = "menu_shown"
     }
 
     return(

@@ -59,7 +59,7 @@ class ProjectDetail extends React.Component{
               <div className="project_link"><a href={state.url} target="_blank" title="Link to a new page" rel="noopener">{state.view_button_text}</a></div>
                 <div id="photos">
                   { state.photos.map((photo, i) => {
-                      return <div className={`photo photo_${i}`} key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
+                      return <div className="photo" key={i}><img src={photo[0]} srcSet={photo[0] + ' 1x,' + photo[1] + ' 2x'} alt={photo[2]} /></div>
                   })
               }
               </div>

@@ -33,7 +33,7 @@ class Work extends React.Component {
   render() {
      const ProjectList = this.state.data.map(function(project, i){
         return (
-           <div className='project' key={project._id} data-title={project.name}>
+           <div className="project" key={project._id} data-title={project.name}>
              {<Project project={project} />}
            </div>
          )
@@ -46,7 +46,7 @@ class Work extends React.Component {
          </Helmet>
          <div className="inner_page">
              <h1>Projects</h1>
-             <div id='projects_wrapper'>
+             <div id="projects_wrapper">
                <Masonry
                  breakpointCols={breakpointColumnsObj}
                  className="masonry_grid"
