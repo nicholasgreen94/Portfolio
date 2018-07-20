@@ -1,8 +1,10 @@
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Typekit from 'react-typekit';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import Typekit from 'react-typekit'
+import Analytics from 'react-router-ga'
+import { TweenMax } from 'gsap'
 import Header from './components/Head/Header'
 import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
@@ -18,7 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'www.nicholasgreendesigns.com' || window.location.href === 'http://www.nicholasgreendesigns.com/') {
+    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'www.nicholasgreendesigns.com' || window.location.href === 'http://www.nicholasgreendesigns.com') {
       this.setState({
         page: 'index'
       })
@@ -27,6 +29,7 @@ class App extends React.Component {
         page: 'not_index'
       })
     }
+    TweenMax.to('#main_footer', 1.25, { opacity: 1, delay: 2 })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -60,36 +63,31 @@ class App extends React.Component {
             <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#000000"/>
             <meta name="msapplication-TileColor" content="#fefefe"/>
             <meta name="theme-color" content="#fefefe"/>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114430954-1"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-114430954-1');
-            </script>
           </Helmet>
+          <Analytics id="UA-114430954-1">
           <Typekit kitId="phl2bvx" />
-          <a to='#skip' id="skip_nav">{"Skip Nav"}</a>
+          <a href='#skip' id="skip_nav">{"Skip Nav"}</a>
             <div id={this.state.page} >
               <div id='site_content'>
-                <Header />
-                <a id="skip"></a>
-                <TransitionGroup>
-                  <CSSTransition
-                    key={location.key}
-                    timeout={0}
-                    classNames='fade'
-                  >
-                <Switch location={location}>
-                  <Route exact path="/" component={Index}/>
-                  <Route path="/projects" component={Work} />
-                  <Route path="/:id" component={ProjectDetail} />
-                </Switch>
-                  </CSSTransition>
-                </TransitionGroup>
-                <Footer/>
+                  <Header />
+                  <a id="skip">{''}</a>
+                  <TransitionGroup>
+                    <CSSTransition
+                      key={location.key}
+                      timeout={0}
+                      classNames='fade'
+                    >
+                    <Switch location={location}>
+                      <Route exact path="/" component={Index}/>
+                      <Route path="/projects" component={Work} />
+                      <Route path="/:id" component={ProjectDetail} />
+                    </Switch>
+                    </CSSTransition>
+                  </TransitionGroup>
+                  <Footer/>
                 </div>
-            </div>
+              </div>
+            </Analytics>
           </div>
       )} />
     )

@@ -11,10 +11,8 @@
 }
 
 .tag_wrapper {
-  animation-name: tag_wrapper;
-  animation-duration: 2s;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
+  opacity: 0;
+  transform: translate3d(0, -40px, 0);
   margin-bottom: 64px;
   text-align: center;
   &:after {
@@ -64,4 +62,10 @@
   a {
     font-weight: 900;
   }
+}
+
+//> Error
+
+.error {
+  color: var(--error);
 }

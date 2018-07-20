@@ -1,17 +1,3 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes tag_wrapper {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -40px, 0); }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); } }
-
 @keyframes tag_wrapper_after {
   0% {
     height: 0;
@@ -35,7 +21,8 @@
   --overlayColor: rgba(0,0,0,.50);
   --bgColor: rgba(0, 0, 0, .02);
   --white: #fefefe;
-  --blue: #008DFF; }
+  --blue: #008DFF;
+  --error: #fb5c5c; }
 
 *::selection {
   background-color: var(--blue);
@@ -355,10 +342,8 @@ li {
     margin-bottom: 2px; } }
 
 .tag_wrapper {
-  animation-name: tag_wrapper;
-  animation-duration: 2s;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
+  opacity: 0;
+  transform: translate3d(0, -40px, 0);
   margin-bottom: 64px;
   text-align: center; }
   .tag_wrapper:after {
@@ -403,6 +388,9 @@ li {
   text-align: center; }
   .project_link a {
     font-weight: 900; }
+
+.error {
+  color: var(--error); }
 
 #main_logo {
   color: var(--black);
@@ -591,23 +579,7 @@ li {
     #not_index h1 {
       font-size: 6vw; } }
 
-#not_index .project_1 {
-  animation-delay: 0.25s; }
-
-#not_index .project_2 {
-  animation-delay: 0.5s; }
-
-#not_index .project_3 {
-  animation-delay: 0.75s; }
-
-#not_index .project_4 {
-  animation-delay: 1s; }
-
 #not_index .project {
-  animation-name: fadeIn;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   background: var(--white);
   cursor: pointer;
   line-height: 0;
@@ -702,13 +674,10 @@ li {
   padding-top: 10vw;
   width: 90%; }
   #photos .photo {
-    animation-name: tag_wrapper;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     background: var(--white);
     line-height: 0;
     opacity: 0;
+    transform: translate3d(0, -30px, 0);
     margin-bottom: 30px; }
     #photos .photo.photo_0 {
       animation-delay: 3s; }
@@ -718,18 +687,6 @@ li {
   @media screen and (min-width: 1000px) {
     #photos {
       padding-top: 6vw; } }
-
-.photo_1 {
-  animation-delay: 1.5s; }
-
-.photo_2 {
-  animation-delay: 3s; }
-
-.photo_3 {
-  animation-delay: 4.5s; }
-
-.photo_4 {
-  animation-delay: 6s; }
 
 #main_footer {
   padding-bottom: 36px;
