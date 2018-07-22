@@ -410,6 +410,7 @@ li {
   background: #000;
   box-sizing: border-box;
   height: 100vh;
+  pointer-events: none;
   opacity: 0;
   overflow-y: auto;
   transform: translate3d(30vw, 0, 0);
@@ -422,6 +423,7 @@ li {
   left: 0; }
   #mobile_nav.menu_shown {
     opacity: 1;
+    pointer-events: auto;
     transform: translate3d(0vw, 0, 0); }
     #mobile_nav.menu_shown ul {
       transform: translate3d(8vw, 0, 0);
