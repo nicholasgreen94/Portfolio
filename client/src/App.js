@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'www.nicholasgreendesigns.com' || window.location.href === 'http://www.nicholasgreendesigns.com' || window.location.href === 'http://www.nicholasgreendesigns.com/') {
+    if (window.location.href === 'http://localhost:3000/' || window.location.href === 'https://www.nicholasgreendesigns.com' || window.location.href === 'https://www.nicholasgreendesigns.com/') {
       this.setState({
         page: 'index'
       })
