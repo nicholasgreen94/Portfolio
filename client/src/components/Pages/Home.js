@@ -13,7 +13,7 @@ class Index extends React.Component{
       <div id="home_page">
         <h1>I am a UI / UX Designer and Web Developer</h1>
         <div className="intro_p">
-          <p>Hi there, I'm Nick! As stated above I am a UI/UX and web developer. Everything I work on is done with purpose and focused on bringing the best experience to the users. I strive to continually grow with my team and bring new ideas with fresh perspectives. I like to work on projects that are challenging and solve them with design, breaking down complex problems into simple solutions.</p>
+          <p>Hi there, I'm Nick! As stated above I am a UI/UX designer and web developer. Everything I work on is done with purpose and focused on bringing the best experience to the users. I strive to continually grow with my team and bring new ideas with fresh perspectives. I like to work on projects that are challenging and solve them with design, breaking down complex problems into simple solutions.</p>
           <Link to="/projects">View Projects <LinkArrow></LinkArrow></Link>
         </div>
       </div>
