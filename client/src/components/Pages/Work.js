@@ -11,10 +11,16 @@ const breakpointColumnsObj = {
 };
 
 class Work extends React.Component {
-  state = {
-    data: [],
-    error: null,
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: [],
+      error: null,
+    }
+    // this.browserMoved = this.browserMoved.bind(this)
   }
+
+
 
   async componentDidMount() {
     try {
@@ -31,6 +37,9 @@ class Work extends React.Component {
   }
 
   render() {
+    window.addEventListener('resize', () => {
+      TweenMax.to('.project', 0, { opacity: 1 })
+    })
      const ProjectList = this.state.data.map(function(project, i){
         return (
            <div className="project" key={project._id} data-title={project.name}>
