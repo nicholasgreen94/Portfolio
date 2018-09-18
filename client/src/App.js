@@ -10,6 +10,7 @@ import Index from './components/Pages/Home'
 import Work from './components/Pages/Work'
 import ProjectDetail from './components/Pages/ProjectDetail'
 import Footer from './components/Footer/Footer'
+import { hotjar } from 'react-hotjar';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,7 +64,8 @@ class App extends React.Component {
             <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#000000"/>
             <meta name="msapplication-TileColor" content="#fefefe"/>
             <meta name="theme-color" content="#fefefe"/>
-          </Helmet>
+            {hotjar.initialize(1019262, 6)}
+        </Helmet>
           <Analytics id="UA-114430954-1">
           <Typekit kitId="phl2bvx" />
           <a href="#skip" id="skip_nav">{"Skip Nav"}</a>
@@ -78,7 +80,7 @@ class App extends React.Component {
                       classNames="fade"
                     >
                     <Switch location={location}>
-                      <Route exact path="/" component={Index}/>
+                      <Route exact path="/" component={Index} />
                       <Route path="/projects" component={Work} />
                       <Route path="/:id" component={ProjectDetail} />
                     </Switch>
