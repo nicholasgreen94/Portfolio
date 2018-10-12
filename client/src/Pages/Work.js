@@ -2,7 +2,7 @@ import React from 'react'
 import Masonry from 'react-masonry-css'
 import { Helmet } from 'react-helmet'
 import { TweenMax } from 'gsap'
-import Project from './Project'
+import Project from '../components/Project'
 
 const breakpointColumnsObj = {
   default: 3,
@@ -17,10 +17,7 @@ class Work extends React.Component {
       data: [],
       error: null,
     }
-    // this.browserMoved = this.browserMoved.bind(this)
   }
-
-
 
   async componentDidMount() {
     try {
@@ -50,7 +47,7 @@ class Work extends React.Component {
      return (
        <div>
          <Helmet>
-           <title>Projects | Nicholas Green | UI/UX Designer and Developer</title>
+           <title>Projects &#8226; Nicholas Green &#8226; UI / UX Designer and Full-Stack Developer</title>
            <meta name="description" content="My latest projects from website design, branding, web development and more." />
          </Helmet>
          <div className="inner_page">

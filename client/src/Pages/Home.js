@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { TweenMax, Sine } from 'gsap'
-import Arrow from '../../assets/images/black_arrow.svg'
+import Arrow from '../assets/images/black_arrow.svg'
 
 class Index extends React.Component{
   render() {

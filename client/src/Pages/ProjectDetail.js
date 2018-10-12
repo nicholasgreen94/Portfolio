@@ -34,7 +34,7 @@ class ProjectDetail extends React.Component{
         <Error />
       }
         <Helmet>
-          <title>{`${state.name}`} | Nicholas Green | UI/UX Designer and Developer</title>
+          <title>{`${state.name}`} &#8226; Nicholas Green &#8226; UI / UX Designer and Full-Stack Developer</title>
           <meta name="description" content={`${state.description}`} />
         </Helmet>
         <div className="inner_page">
